@@ -7,6 +7,8 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Data
 @Builder
 @Table(name = "persona")
@@ -16,11 +18,14 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_persona;
 
+    @Column
     @Size(max = 80, message = "Nombre demasiado largo")
     private String nombre;
 
+    @Column
     private String telefono;
 
+    @Column
     private String mail;
 
 }
